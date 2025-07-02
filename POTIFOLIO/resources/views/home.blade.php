@@ -1,4 +1,4 @@
-@extends('layouts.guest')
+@extends('layouts.app')
 @section('content')
 <style>
   html, body {
@@ -51,16 +51,16 @@
     <div class="hidden md:flex gap-4 lg:gap-8 text-base font-medium">
         <a href="#" class="text-gray-700 hover:text-orange-500 transition">Home</a>
         <a href="#about" class="text-gray-700 hover:text-orange-500 transition">About</a>
-        <a href="#services" class="text-gray-700 hover:text-orange-500 transition">Services</a>
-        <a href="#projects" class="text-gray-700 hover:text-orange-500 transition">Projects</a>
+        <a href="services" class="text-gray-700 hover:text-orange-500 transition">Services</a>
+        <a href="projects" class="text-gray-700 hover:text-orange-500 transition">Projects</a>
         <a href="#resume" class="text-gray-700 hover:text-orange-500 transition">Resume</a>
-        <a href="#contact" class="text-gray-700 hover:text-orange-500 transition">Contact</a>
+        <a href="contact" class="text-gray-700 hover:text-orange-500 transition">Contact</a>
     </div>
     <a href="#contact" class="hidden md:inline-block px-4 md:px-6 py-2 bg-orange-500 text-white rounded font-semibold shadow hover:bg-orange-600 transition whitespace-nowrap">Hire Me</a>
     <!-- Mobile Hamburger (optional) -->
 </nav>
 <!-- Hero Section -->
-<div class="w-full h-screen flex items-center justify-center bg-white pt-[72px]">
+<section id="home" class="w-full min-h-[calc(100vh-72px)] flex items-center justify-center bg-white pt-[72px] pb-8">
     <div class="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 px-4">
         <!-- Left Column -->
         <div class="flex-1 flex flex-col justify-center items-start max-w-xl">
@@ -87,6 +87,6 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 @endsection
 
