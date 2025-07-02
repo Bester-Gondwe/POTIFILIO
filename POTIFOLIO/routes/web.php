@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('home');
@@ -23,11 +24,26 @@ Route::get('/projects', [ProjectController::class, 'index'])->name('projects.ind
 Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('projects.show');
 
 // Admin routes (protected)
-Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth', 'is_admin'])
+    ->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', function () {
         return view('admin.dashboard');
     })->name('dashboard');
     Route::resource('projects', ProjectController::class)->except(['index', 'show']);
 });
+
+Route::get('/services', function () {
+    return view('services');
+})->name('services');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::get('/resume', function () {
+    return view('resume');
+})->name('resume');
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 require __DIR__.'/auth.php';

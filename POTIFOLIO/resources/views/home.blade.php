@@ -49,12 +49,12 @@
         <span class="ml-2 text-xl font-bold text-gray-800">Logo</span>
     </div>
     <div class="hidden md:flex gap-4 lg:gap-8 text-base font-medium">
-        <a href="#" class="text-gray-700 hover:text-orange-500 transition">Home</a>
+        <a href="{{ url('/') }}" class="text-gray-700 hover:text-orange-500 transition">Home</a>
         <a href="#about" class="text-gray-700 hover:text-orange-500 transition">About</a>
-        <a href="services" class="text-gray-700 hover:text-orange-500 transition">Services</a>
-        <a href="projects" class="text-gray-700 hover:text-orange-500 transition">Projects</a>
-        <a href="#resume" class="text-gray-700 hover:text-orange-500 transition">Resume</a>
-        <a href="contact" class="text-gray-700 hover:text-orange-500 transition">Contact</a>
+        <a href="{{ route('services') }}" class="text-gray-700 hover:text-orange-500 transition">Services</a>
+        <a href="{{ route('projects.index') }}" class="text-gray-700 hover:text-orange-500 transition">Projects</a>
+        <a href="{{ route('resume') }}" class="text-gray-700 hover:text-orange-500 transition">Resume</a>
+        <a href="{{ route('contact') }}" class="text-gray-700 hover:text-orange-500 transition">Contact</a>
     </div>
     <a href="#contact" class="hidden md:inline-block px-4 md:px-6 py-2 bg-orange-500 text-white rounded font-semibold shadow hover:bg-orange-600 transition whitespace-nowrap">Hire Me</a>
     <!-- Mobile Hamburger (optional) -->
@@ -85,6 +85,28 @@
                 <a href="#" class="bg-gray-100 hover:bg-orange-100 p-2 rounded"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.59-2.47.7a4.3 4.3 0 001.88-2.37 8.59 8.59 0 01-2.72 1.04A4.28 4.28 0 0016.11 4c-2.37 0-4.29 1.92-4.29 4.29 0 .34.04.67.11.99C7.69 8.99 4.07 7.13 1.64 4.15c-.37.64-.58 1.38-.58 2.17 0 1.5.76 2.82 1.92 3.6-.71-.02-1.38-.22-1.97-.54v.05c0 2.1 1.5 3.85 3.5 4.25-.36.1-.74.16-1.13.16-.28 0-.54-.03-.8-.08.54 1.68 2.11 2.9 3.97 2.93A8.6 8.6 0 012 19.54c-.29 0-.57-.02-.85-.05A12.13 12.13 0 007.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.36-.02-.54A8.18 8.18 0 0024 4.59a8.36 8.36 0 01-2.54.7z"/></svg></a>
                 <a href="#" class="bg-gray-100 hover:bg-orange-100 p-2 rounded"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.6 3.2H4.4A1.2 1.2 0 003.2 4.4v15.2a1.2 1.2 0 001.2 1.2h15.2a1.2 1.2 0 001.2-1.2V4.4a1.2 1.2 0 00-1.2-1.2zm-8.4 15.2H6.4V10.4h4.8v8zm-2.4-9.2a1.4 1.4 0 110-2.8 1.4 1.4 0 010 2.8zm11.2 9.2h-4.8v-4c0-.96-.02-2.2-1.34-2.2-1.34 0-1.54 1.05-1.54 2.13v4.07h-4.8V10.4h4.6v1.2h.06c.64-1.2 2.2-2.47 4.52-2.47 4.84 0 5.74 3.19 5.74 7.33v4.74z"/></svg></a>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="w-full bg-white py-16">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 px-4">
+        <div class="flex-1 flex justify-center">
+            <img src="/images/profile.png" alt="Profile" class="w-56 h-56 object-cover rounded-full border-8 border-orange-100 shadow-xl">
+        </div>
+        <div class="flex-1">
+            <h2 class="text-3xl font-bold mb-4 text-orange-500">About Me</h2>
+            <p class="text-gray-700 mb-4">I am a passionate UI/UX and Product Designer with a knack for creating beautiful, user-centered digital experiences. I love solving problems and bringing ideas to life through design.</p>
+            <h3 class="text-xl font-semibold mb-2">Skills</h3>
+            <ul class="flex flex-wrap gap-3">
+                <li class="bg-purple-100 text-purple-700 px-3 py-1 rounded text-sm">UI/UX Design</li>
+                <li class="bg-purple-100 text-purple-700 px-3 py-1 rounded text-sm">Web Design</li>
+                <li class="bg-purple-100 text-purple-700 px-3 py-1 rounded text-sm">Branding</li>
+                <li class="bg-purple-100 text-purple-700 px-3 py-1 rounded text-sm">Prototyping</li>
+                <li class="bg-purple-100 text-purple-700 px-3 py-1 rounded text-sm">Figma</li>
+                <li class="bg-purple-100 text-purple-700 px-3 py-1 rounded text-sm">Adobe XD</li>
+            </ul>
         </div>
     </div>
 </section>
