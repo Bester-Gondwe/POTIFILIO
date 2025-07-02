@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    Intervention\Image\ImageServiceProvider::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -122,5 +123,7 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
+
+    'Image' => Intervention\Image\Facades\Image::class,
 
 ];

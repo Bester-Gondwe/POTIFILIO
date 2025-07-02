@@ -15,6 +15,17 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @auth
+                    <x-nav-link :href="route('admin.dashboard')" :active="request()->is('admin*')">
+                        {{ __('Admin Dashboard') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin.projects.create')" :active="request()->routeIs('admin.projects.create')">
+                        {{ __('Add Project') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('projects.index')" :active="request()->routeIs('projects.index')">
+                        {{ __('View Projects') }}
+                    </x-nav-link>
+                    @endauth
                 </div>
             </div>
 
@@ -70,6 +81,17 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            @auth
+            <x-responsive-nav-link :href="route('admin.dashboard')" :active="request()->is('admin*')">
+                {{ __('Admin Dashboard') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin.projects.create')" :active="request()->routeIs('admin.projects.create')">
+                {{ __('Add Project') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('projects.index')" :active="request()->routeIs('projects.index')">
+                {{ __('View Projects') }}
+            </x-responsive-nav-link>
+            @endauth
         </div>
 
         <!-- Responsive Settings Options -->
