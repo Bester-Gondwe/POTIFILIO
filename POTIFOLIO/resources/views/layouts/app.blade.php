@@ -30,7 +30,7 @@
             <!-- Page Content -->
             <main class="flex-1 flex flex-col items-center justify-center py-8 px-2">
                 <div class="w-full max-w-7xl">
-                    @yield('content')
+                    {{ $slot }}
                 </div>
             </main>
         </div>

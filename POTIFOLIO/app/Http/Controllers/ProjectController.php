@@ -54,6 +54,7 @@ class ProjectController extends Controller
             $validated['project_file'] = $fileName;
         }
 
+        $validated['user_id'] = $request->user()->id;
         $project = Project::create($validated);
 
         return redirect()->route('projects.show', $project)->with('success', 'Project created successfully!');
@@ -123,7 +124,15 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        // Delete logic will be added here
-        // ...
+        // Delete image file if exists
+        if ($project->image && file_exists(public_path('uploads/'.$project->image))) {
+            unlink(public_path('uploads/'.$project->image));
+        }
+        // Delete project file if exists
+        if ($project->project_file && file_exists(public_path('uploads/'.$project->project_file))) {
+            unlink(public_path('uploads/'.$project->project_file));
+        }
+        $project->delete();
+        return redirect()->route('admin.dashboard')->with('success', 'Project deleted successfully!');
     }
 }

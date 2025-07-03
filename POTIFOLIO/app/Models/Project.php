@@ -15,5 +15,11 @@ class Project extends Model
         'project_file',
         'github_link',
         'live_link',
+        'user_id',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

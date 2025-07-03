@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('github_link')->nullable();
             $table->string('live_link')->nullable();
             $table->string('tags')->nullable();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
